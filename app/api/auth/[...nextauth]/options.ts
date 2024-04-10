@@ -3,7 +3,7 @@ import GitHub from "next-auth/providers/github";
 import Credentials from "next-auth/providers/credentials";
 
 export const options: NextAuthOptions = {
-    providers:[
+    providers: [
         GitHub({
             clientId: process.env.GITHUB_ID as string,
             clientSecret: process.env.GITHUB_SECRET as string
@@ -17,7 +17,7 @@ export const options: NextAuthOptions = {
         //             placeholder: "your-cool-username" 
         //         },
         //         async authorize(credentials){
-                     
+
         //         }
         //     }
         // })
