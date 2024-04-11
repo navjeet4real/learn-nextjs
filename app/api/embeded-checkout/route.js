@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
-const stripe = require("stripe")(process.env.STRIPE_CLIENT_SECRET);
+import { stripe } from "../../../stripe";
+// console.log(process.env.STRIPE_CLIENT_SECRET, "process.env.STRIPE_CLIENT_SECRET")
 
 
 export async function POST(request) {
 
     try {
+        // const stripe = await loadStripe(`${process.env.STRIPE_PUSHABLE_KEY}`);
         const { priceId } = await request.json();
 
         const session = await stripe.checkout.sessions.create({

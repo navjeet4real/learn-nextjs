@@ -5,7 +5,7 @@ import { EmbeddedCheckout, EmbeddedCheckoutProvider } from "@stripe/react-stripe
 import { useCallback, useRef, useState } from "react";
 
 export default function EmbeddedCheckoutButton() {
-    const stripePromise = loadStripe(process.env.STRIPE_PUSHABLE_KEY!);
+    const stripePromise = loadStripe(`${process.env.STRIPE_PUSHABLE_KEY}`);
     const [showCheckout, setShowCheckout] = useState(false);
 
     const modalRef = useRef<HTMLDialogElement>(null);
